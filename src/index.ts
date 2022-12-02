@@ -1,13 +1,13 @@
+import 'dotenv/config';
 import express from 'express';
+import connectDB from './database/db';
 
 const app = express();
 app.use(express.json());
 
 const PORT = process.env.PORT || 3000;
 
-app.get('/', (_req, res) => {
-  res.send('Hello typescript express!');
-});
+connectDB();
 
 app.listen(PORT, () => {
   console.log(`Servidor conectado al puerto ${PORT}`);
