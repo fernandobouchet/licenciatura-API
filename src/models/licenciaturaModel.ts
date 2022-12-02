@@ -1,5 +1,5 @@
 import { prop, getModelForClass, Ref } from '@typegoose/typegoose';
-import { Materia } from './Materia';
+import { Materia } from './materiaModel';
 
 class Licenciatura {
   @prop({ required: true, unique: true })
