@@ -2,19 +2,21 @@ import { Request, Response } from 'express';
 import { MateriaModel as Materia } from '../models/index';
 
 const obtenerMaterias = async (_req: Request, res: Response) => {
-  const materias = await Materia.find();
+  const materias = await Materia.find().populate('correlativas');
   res.status(200).json(materias);
 };
 
 const obtenerMateriaPorId = async (req: Request, res: Response) => {
-  const materia = await Materia.findById(req.params.id);
+  const materia = await Materia.findById(req.params.id).populate(
+    'correlativas'
+  );
   res.status(200).json(materia);
 };
 
 const agregarMateria = async (req: Request, res: Response) => {
   const materia = await Materia.create({
     asignatura: req.body.asignatura,
-    orden: req.body.orden,
+    materiaId: req.body.materiaId,
     area: req.body.area,
     hsSemanales: req.body.hsSemanales,
     cargaHorariaTotal: req.body.cargaHorariaTotal,

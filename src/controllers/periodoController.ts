@@ -14,7 +14,6 @@ const obtenerPeriodoPorId = async (req: Request, res: Response) => {
 const agregarPeriodo = async (req: Request, res: Response) => {
   const periodo = await Periodo.create({
     orden: req.body.orden,
-    nombre: req.body.nombre,
     carreraId: req.body.carreraId,
     materias: req.body.materias,
   });

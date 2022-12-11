@@ -5,6 +5,6 @@ export class Carrera {
   @prop({ required: true, unique: true })
   nombre: string;
 
-  @prop({ ref: () => Periodo })
+  @prop({ required: true, ref: () => Periodo })
   periodos: Ref<Periodo>[];
 }

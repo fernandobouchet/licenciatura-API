@@ -6,9 +6,6 @@ export class Periodo {
   @prop({ required: true })
   orden: number;
 
-  @prop({ required: true })
-  nombre: string;
-
   @prop({ ref: () => Materia })
   materias: Ref<Materia>[];
 
