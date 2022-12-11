@@ -8,6 +8,7 @@ const obtenerPeriodos = async (_req: Request, res: Response) => {
 
 const obtenerPeriodoPorId = async (req: Request, res: Response) => {
   const periodos = await Periodo.findById(req.params.id).populate('materias');
+
   res.status(200).json(periodos);
 };
 

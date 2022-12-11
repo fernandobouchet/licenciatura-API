@@ -24,6 +24,7 @@ const obtenerCarreraPorId = async (req: Request, res: Response) => {
 const agregarCarrera = async (req: Request, res: Response) => {
   const carrera = await Carreras.create({
     nombre: req.body.nombre,
+    carreraId: req.body.carreraId,
   });
   res.status(200).json(carrera);
 };

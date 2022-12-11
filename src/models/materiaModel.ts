@@ -1,4 +1,4 @@
-import { prop } from '@typegoose/typegoose';
+import { prop, Ref } from '@typegoose/typegoose';
 
 export class Materia {
   @prop({ required: true, unique: true })
@@ -16,9 +16,9 @@ export class Materia {
   @prop({ required: true })
   cargaHorariaTotal: number;
 
-  @prop()
-  correlativas: Materia[];
+  @prop({ ref: () => Materia })
+  correlativas: Ref<Materia>[];
 
-  @prop()
-  optativas: Materia[];
+  @prop({ ref: () => Materia })
+  optativas: Ref<Materia>[];
 }
