@@ -1,0 +1,10 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.PeriodoModel = exports.MateriaModel = exports.CarreraModel = void 0;
+const typegoose_1 = require("@typegoose/typegoose");
+const carreraModel_1 = require("./carreraModel");
+const materiaModel_1 = require("./materiaModel");
+const periodoModel_1 = require("./periodoModel");
+exports.CarreraModel = (0, typegoose_1.getModelForClass)(carreraModel_1.Carrera);
+exports.MateriaModel = (0, typegoose_1.getModelForClass)(materiaModel_1.Materia);
+exports.PeriodoModel = (0, typegoose_1.getModelForClass)(periodoModel_1.Periodo);
